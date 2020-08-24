@@ -18,14 +18,7 @@ public class RunMove : MonoBehaviour
     void Update()
     {
         player.velocity = new Vector3((Input.GetAxis("Horizontal") * speed ), player.velocity.y, Input.GetAxis("Vertical") * speed );
-        if (Input.GetKey("d"))
-        {
-            transform.Rotate(new Vector3(0f, -1f, 0f) *speed);
-        }
-        if (Input.GetKey("a"))
-        {
-            transform.Rotate(new Vector3(0f, 1f, 0f) *speed);
-        }
+
     }
 }
 
