@@ -18,7 +18,7 @@ public class Youwin : MonoBehaviour
     void Update()
     {
         scoretowin = ScoreText.score;
-        if (scoretowin >= 5)
+        if (scoretowin >= 8)
         {
             Textwin.SetActive(true);
             Restart.SetActive(true);
