@@ -6,19 +6,21 @@ using UnityEngine.SceneManagement;
 public class RunMove : MonoBehaviour
 
 {
-    public Rigidbody player;
-    public int speed = 5;
+    private Rigidbody player;
+    public float speed = 5;
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        player.velocity = new Vector3((Input.GetAxis("Horizontal") * speed ), player.velocity.y, Input.GetAxis("Vertical") * speed );
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        player.AddForce(movement * speed);
 
     }
 }
-
